@@ -7,7 +7,19 @@
   </head>
   <body>
 	
-		<%= yield %>
+		<div class="container_16">
+			<div class="grid_4">
+				<%= yield :left %>
+			</div>
+			
+			<div class="grid_8">
+				<%= yield %>
+			</div>
+			
+			<div class="grid_4">
+				<%= yield :right %>
+			</div>
+		</div>
 		
   </body>
 </html>

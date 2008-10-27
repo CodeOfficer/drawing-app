@@ -1,3 +1,12 @@
+// Blackbird.js
+// 
+// log.debug( 'this is a debug message' );
+// log.info( 'this is an info message' );
+// log.warn( 'this is a warning message' );
+// log.error( 'this is an error message' );
+// 
+// uncomment below to trap blackbirdjs logging
+// 
 // var log = {
 //   toggle: function() {},
 //   move: function() {},
@@ -13,13 +22,15 @@
 $(function() {
 	
 	log.profile( 'timing' );
-	
-	log.debug( 'this is a debug message' );
-	log.info( 'this is an info message' );
-	log.warn( 'this is a warning message' );
-	log.error( 'this is an error message' );
 
-	$('div').css({ backgroundColor: '#DDD' });
+	// $('div').css({ backgroundColor: '#DDD' });
+	
+	
+	$('.toggler').click(function() {
+		$(this).html;
+		$(this).next('.toggled').toggle('fade');
+	});
+	
 
 	log.profile( 'timing' );
 

@@ -1,21 +1,46 @@
-<div id="toolbar">
-	<dl>
-		<dt class="">draw</dt>
-		<dd class="">button</dd>
-		<dt class="">erase</dt>
-		<dd class="">button</dd>
-	</dl>
-</div>
 
-<div id='canvas'>
-	canvas
-</div>
+<% content_for(:left) do %>
+	<div id='toolbar' class='widget'>
+		<div class='toggler'><a href="#">toolbar toggle</a></div>
+		<div class='toggled' style='display:none;'>
+			<dl>
+				<dt class=''>draw</dt>
+				<dd class=''>button</dd>
+				<dt class=''>erase</dt>
+				<dd class=''>button</dd>
+			</dl>
+		</div>
+	</div>
+	
+	<h4>a: buttons</h4>
+	<div><a href="http://some-site.com/" class="button">Draw</a></div>
+	<div><a href="http://some-site.com/" class="button positive">Draw</a></div>
+	<div><a href="http://some-site.com/" class="button negative">Draw</a></div>
+	
+	<h4>button: buttons</h4>
+	<button type="submit">Draw</button>
+	<button type="submit" class="positive">Draw</button>
+	<button type="submit" class="negative">Draw</button>
+	
+<% end %>
 
-<div id="debugger">
-	<ul>
-		<li><a href="javascript:log.clear();">clear</a></li>
-		<li><a href="javascript:log.move();">move</a></li>
-		<li><a href="javascript:log.resize();">resize</a></li>
-		<li><a href="javascript:log.toggle();">toggle</a></li>
-	</ul>
+<% content_for(:right) do %>
+	<div id='debugger' class='widget'>
+		<div class='toggler'><a href="#">debugger toggle</a></div>
+		<div class='toggled' style='display:none;'>
+			<ul>
+				<div><a href='javascript:log.clear();'>clear</a></div>
+				<div><a href='javascript:log.move();'>move</a></div>
+				<div><a href='javascript:log.resize();'>resize</a></div>
+				<div><a href='javascript:log.toggle();'>toggle</a></div>
+			</ul>
+		</div>
+	</div>
+<% end %>
+
+<div id='canvas' class='widget'>
+	<div class='toggler'><a href="#">canvas toggle</a></div>
+	<div class='toggled' style='display:none;'>
+		canvas
+	</div>
 </div>
