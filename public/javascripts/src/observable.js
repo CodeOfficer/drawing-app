@@ -1,0 +1,48 @@
+JS.Observable = new JS.Module({
+  addObserver: function(observer, context) {
+    (this.__observers__ = this.__observers__ || []).push({bk: observer, cx: context || null});
+  },
+  
+  removeObserver: function(observer, context) {
+    this.__observers__ = this.__observers__ || [];
+    context = context || null;
+    var i = this.countObservers();
+    while (i--) {
+      if (this.__observers__[i].bk === observer && this.__observers__[i].cx === context) {
+        this.__observers__.splice(i,1);
+        return;
+      }
+    }
+  },
+  
+  removeObservers: function() {
+    this.__observers__ = [];
+  },
+  
+  countObservers: function() {
+    return (this.__observers__ = this.__observers__ || []).length;
+  },
+  
+  notifyObservers: function() {
+    if (!this.isChanged()) return;
+    var i = this.countObservers(), observer;
+    while (i--) {
+      observer = this.__observers__[i];
+      observer.bk.apply(observer.cx, arguments);
+    }
+  },
+  
+  setChanged: function(state) {
+    this.__changed__ = !(state === false);
+  },
+  
+  isChanged: function() {
+    if (this.__changed__ === undefined) this.__changed__ = true;
+    return !!this.__changed__;
+  }
+});
+
+JS.Observable.include({
+  subscribe:    JS.Observable.instanceMethod('addObserver'),
+  unsubscribe:  JS.Observable.instanceMethod('removeObserver')
+});

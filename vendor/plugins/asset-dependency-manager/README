@@ -1,0 +1,76 @@
+Asset Dependency Manager Readme 
+----------------------------------------------------------------
+* Web:        http://www.codeofficer.com/
+* Email:      spam*@*codeofficer*dot*com
+* JQuery:     http://www.jquery.com/
+* JQuery UI:  http://ui.jquery.com/
+* Based on    http://github.com/arya/js_dependency_manager/tree/master
+
+(Credit goes to Arya for initial inspiration with his JS dependency manager)
+
+ADM is a plugin to dynamically manage a complex array of xxx.js and xxx.css dependencies. 
+It will assist you in defining those dependencies and outputting the appropriate javascript_include
+and stylesheet_link tags in your final layout.
+
+I found this mostly useful when dealing with JQuery and JQuery UI's complex arrangement of js and css theme files. 
+An alternative is to collect all assets into one file and depend on caching ... at least in the case of Jquery UI
+though that would be 350k of scripts you might or might not use.
+
+assumptions:
+you prefer to keep your js plugins as seperate files
+your js and css files all have corresponding ".xxx" extensions
+you keep your *.js files in you javascripts directory
+you keep your *.css files in your stylesheets directory
+
+Example
+=======
+
+In your Application Helper ...
+
+Here you must define a method called 'asset_dependencies'. This method, which should return a Hash, 
+matches keys to values, the values for which can be of type String, Array or Symbol. While Array values can be 
+composed of both Symbols and Strings, the Symbols should appear first so that the dependencies they refer to
+can be loaded first. 
+
+There is also a special key of :defaults which if set to true will make a dependency for rails 
+own JAVASCRIPT_DEFAULT_SOURCES which will be loaded first.
+
+    module ApplicationHelper
+      def asset_dependencies
+        {
+        :defaults =>        true,
+        :core =>            'ui/ui.core.js',
+        :tabs =>            [ :core, 
+                              'ui/ui.tabs.js', 
+                              'themes/flora/flora.tabs.css' ],
+        :slider =>          [ :core,
+                              'ui/ui.slider.js', 
+                              'themes/flora/flora.slider.css' ],
+        :slider_and_tabs => [ :tabs, :slider ]
+        }
+      end      
+    end
+
+In your Views / Partials ...
+
+You'll now use a view helper called assets_for to declare which assets need to be loaded to support 
+the current view or partial.
+
+    <% assets_for :tabs, :slider %>
+    <!-- more html etc ... -->
+
+In your Layout file ...
+
+    <%= asset_dependency_manager_tags %>
+
+And that will return ...
+
+<script src="/javascripts/jquery-1.2.6.min.js?1218093045" type="text/javascript"></script>
+<script src="/javascripts/ui/ui.core.js?1215626244" type="text/javascript"></script>
+<script src="/javascripts/application.js?1217637539" type="text/javascript"></script>
+<script src="/javascripts/ui/ui.slider.js?1215624926" type="text/javascript"></script>
+<script src="/javascripts/ui/ui.tabs.js?1215624926" type="text/javascript"></script>
+<link href="/stylesheets/themes/flora/flora.slider.css?1215624926" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/themes/flora/flora.tabs.css?1215624926" media="screen" rel="stylesheet" type="text/css" />
+
+Copyright (c) 2008 CodeOfficer, released under the MIT license 
