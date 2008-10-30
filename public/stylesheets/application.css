@@ -1,12 +1,15 @@
 body { margin: 5px 5px; }
 ul { margin-bottom: 0px; } 
+dl { margin-bottom: 0px; } 
 
-.widget { background: #FC6; margin-top: 5px;} 
+.widget { background: #FC6; margin-top: 5px; } 
 
-.toggler { border: 1px solid #999; padding:	2px; padding-left: 20px;}
-.toggler { background: #DDD url(/images/silk/icons/bullet_go.png) no-repeat scroll 2px 3px; }
+.toggler { border: 1px solid #999; padding:	2px; padding-left: 20px; background: #DDD; }
+.toggler { background: url(/images/silk/icons/door_open.png) no-repeat scroll 2px 3px; }
+.toggler.closed { background: url(/images/silk/icons/door.png) no-repeat scroll 2px 3px; }
 
-.toggled { border: 1px solid #999; border-top: 0px; padding: 5px 5px; }
-.toggled > ul { list-style: none; }
-.toggled > ul > li { margin-left: 0px; }
+.togglee { border: 1px solid #999; border-top: 0px; padding: 5px; }
+.togglee.closed { display: none; }
+.togglee > ul { list-style: none; }
+.togglee > ul > li { margin-left: 0px; }
 

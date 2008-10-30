@@ -1,9 +1,10 @@
 module ApplicationHelper
+  
   def asset_dependencies
     {
-      :defaults =>          [ :styles, :themeroller, :jquery, :blackbird, 'application.js' ],
+      :defaults =>          [ :styles, :themeroller, :jquery, :blackbird, :js_class, 'application.js' ],
       :styles =>            [ '960/reset.css', '960/text.css', '960/960.css', 'blueprint/plugins/buttons/screen.css', 'application.css' ],
-      :js_class =>          [ 'class.js' ],
+      :js_class =>          [ 'src/class.js' ],
       :js_command =>        [ :js_class, 'src/command.js' ],
       :js_comparable =>     [ :js_class, 'src/comparable.js' ],
       :js_decorator =>      [ :js_class, 'src/decorator.js' ],
@@ -21,4 +22,19 @@ module ApplicationHelper
       :blackbird =>         [ 'blackbirdjs/blackbird.js', 'blackbirdjs/blackbird.css' ]
     }
   end
+  
+  def silk_image( img, options={} )
+    image_tag "/images/silk/icons/#{img}", options
+  end
+  
+  def widget_for( title, options = {}, &block )
+    block_to_partial 'shared/widget', options.merge( :title => title ), &block
+  end
+  
+  # courtesy of http://errtheblog.com/posts/11-block-to-partial
+  def block_to_partial( partial_name, options = {}, &block )
+    options.merge!( :body => capture( &block ) )
+    concat( render( :partial => partial_name, :locals => options ), block.binding )
+  end
+  
 end

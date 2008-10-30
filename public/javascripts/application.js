@@ -19,19 +19,37 @@
 //   profile: function() {}
 // };
 
+ var Canvas = new JS.Class({
+	  initialize: function(dom_id) {
+	    this.dom_id = dom_id;
+	  },
+
+	  speak: function() {
+	    return 'My DOM ID is ' + this.dom_id + '!';
+	  }
+	});
+
+
 $(function() {
 	
 	log.profile( 'timing' );
-
-	// $('div').css({ backgroundColor: '#DDD' });
-	
-	
+		
+	// behviors for togglers
 	$('.toggler').click(function() {
-		$(this).html;
-		$(this).next('.toggled').toggle('fade');
+		log.debug( 'click toggler!' );
+		$(this).toggleClass('closed');
+		$(this).next('.togglee').toggleClass('closed');
 	});
-	
 
+	// trapping .button clicks	
+	$('.button').click(function() {
+		log.debug( 'click trapped!' );
+		return false;
+	});
+
+	var canvas = new Canvas('canvas');
+	// alert(canvas.speak())
+	
 	log.profile( 'timing' );
 
 });

@@ -1,46 +1,53 @@
-
 <% content_for(:left) do %>
-	<div id='toolbar' class='widget'>
-		<div class='toggler'><a href="#">toolbar toggle</a></div>
-		<div class='toggled' style='display:none;'>
-			<dl>
-				<dt class=''>draw</dt>
-				<dd class=''>button</dd>
-				<dt class=''>erase</dt>
-				<dd class=''>button</dd>
-			</dl>
+
+	<% widget_for 'toolbar' do %>
+		<dl>
+			<dt class='toolbar-button'><%= silk_image 'pencil.png' %></dt>
+			<dd class='toolbar-description'>Draw</dd>
+			<dt class='toolbar-button'><%= silk_image 'pencil.png' %></dt>
+			<dd class='toolbar-description'>button</dd>
+		</dl>
+	<% end %>
+
+	<% widget_for 'misc' do %>
+		<h4>a: buttons</h4>
+		<div class="clearfix">
+			<a href="http://some-site.com/" class="button"><%= silk_image 'eye.png' %> See</a>
+			<a href="http://some-site.com/" class="button positive"><%= silk_image 'add.png' %> Add</a>
+			<a href="http://some-site.com/" class="button negative"><%= silk_image 'cancel.png' %> Cancel</a>
+			<a href="http://some-site.com/" class="button"><%= silk_image 'door_in.png' %>	add element</a>
 		</div>
-	</div>
-	
-	<h4>a: buttons</h4>
-	<div><a href="http://some-site.com/" class="button">Draw</a></div>
-	<div><a href="http://some-site.com/" class="button positive">Draw</a></div>
-	<div><a href="http://some-site.com/" class="button negative">Draw</a></div>
-	
-	<h4>button: buttons</h4>
-	<button type="submit">Draw</button>
-	<button type="submit" class="positive">Draw</button>
-	<button type="submit" class="negative">Draw</button>
+		<h4>button: buttons</h4>
+		<div class="clearfix">
+			<% form_tag({:action => "index", :method => :get}, {:class => "form"}) do %>
+				<button type="submit">Draw</button>
+				<button type="submit" class="positive">Draw</button>
+				<button type="submit" class="negative">Draw</button>
+			<% end -%>
+		</div>
+	<% end %>
 	
 <% end %>
 
 <% content_for(:right) do %>
-	<div id='debugger' class='widget'>
-		<div class='toggler'><a href="#">debugger toggle</a></div>
-		<div class='toggled' style='display:none;'>
-			<ul>
-				<div><a href='javascript:log.clear();'>clear</a></div>
-				<div><a href='javascript:log.move();'>move</a></div>
-				<div><a href='javascript:log.resize();'>resize</a></div>
-				<div><a href='javascript:log.toggle();'>toggle</a></div>
-			</ul>
-		</div>
-	</div>
+
+	<% widget_for 'debugger' do %>
+		<ul>
+			<div><a href='javascript:log.clear();'>clear</a></div>
+			<div><a href='javascript:log.move();'>move</a></div>
+			<div><a href='javascript:log.resize();'>resize</a></div>
+			<div><a href='javascript:log.toggle();'>toggle</a></div>
+		</ul>
+	<% end %>
+	
 <% end %>
 
-<div id='canvas' class='widget'>
-	<div class='toggler'><a href="#">canvas toggle</a></div>
-	<div class='toggled' style='display:none;'>
-		canvas
-	</div>
-</div>
+<% content_for(:center) do %>
+
+	<% widget_for 'workspace' do %>
+		<% content_tag :canvas, :id => "canvas" do  %>
+			xxx
+		<% end %>
+	<% end %>
+	
+<% end %>
