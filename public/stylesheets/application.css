@@ -1,6 +1,7 @@
 body { margin: 5px 5px; }
 ul { margin-bottom: 0px; } 
 dl { margin-bottom: 0px; } 
+canvas { border: 1px solid #999; width: 100%; }
 
 .widget { background: #FC6; margin-top: 5px; } 
 

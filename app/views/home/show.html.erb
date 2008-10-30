@@ -4,8 +4,8 @@
 		<dl>
 			<dt class='toolbar-button'><%= silk_image 'pencil.png' %></dt>
 			<dd class='toolbar-description'>Draw</dd>
-			<dt class='toolbar-button'><%= silk_image 'pencil.png' %></dt>
-			<dd class='toolbar-description'>button</dd>
+			<dt class='toolbar-button'><%= silk_image 'bomb.png' %></dt>
+			<dd class='toolbar-description'>Erase</dd>
 		</dl>
 	<% end %>
 
@@ -33,10 +33,10 @@
 
 	<% widget_for 'debugger' do %>
 		<ul>
-			<div><a href='javascript:log.clear();'>clear</a></div>
-			<div><a href='javascript:log.move();'>move</a></div>
-			<div><a href='javascript:log.resize();'>resize</a></div>
-			<div><a href='javascript:log.toggle();'>toggle</a></div>
+			<li><%= link_to_function "clear", "log.clear()" %></li>
+			<li><%= link_to_function "move", "log.move()" %></li>
+			<li><%= link_to_function "resize", "log.resize()" %></li>
+			<li><%= link_to_function "toggle", "log.toggle()" %></li>
 		</ul>
 	<% end %>
 	
