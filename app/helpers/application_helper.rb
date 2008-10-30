@@ -28,7 +28,7 @@ module ApplicationHelper
   end
   
   def widget_for( title, options = {}, &block )
-    block_to_partial 'shared/widget', options.merge( :title => title ), &block
+    block_to_partial 'shared/widget_template', options.merge( :title => title ), &block
   end
   
   # courtesy of http://errtheblog.com/posts/11-block-to-partial
