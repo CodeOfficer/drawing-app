@@ -1,0 +1,17 @@
+<% widget_for 'misc', :closed => 'closed' do %>
+	<h4>a: buttons</h4>
+	<div class="clearfix">
+		<a href="#" class="button"><%= silk_image 'eye.png' %> See</a>
+		<a href="#" class="button positive"><%= silk_image 'add.png' %> Add</a>
+		<a href="#" class="button negative"><%= silk_image 'cancel.png' %> Cancel</a>
+		<a href="#" class="button"><%= silk_image 'door_in.png' %>	add element</a>
+	</div>
+	<h4>button: buttons</h4>
+	<div class="clearfix">
+		<% form_tag({:action => "index", :method => :get}, {:class => "form"}) do %>
+			<button type="submit">Draw</button>
+			<button type="submit" class="positive">Draw</button>
+			<button type="submit" class="negative">Draw</button>
+		<% end -%>
+	</div>
+<% end %>	

@@ -1,34 +1,11 @@
 <% content_for(:left) do %>
 	<%= render :partial => "widgets/toolbar" %>
-
-	<% widget_for 'misc' do %>
-		<h4>a: buttons</h4>
-		<div class="clearfix">
-			<a href="#" class="button"><%= silk_image 'eye.png' %> See</a>
-			<a href="#" class="button positive"><%= silk_image 'add.png' %> Add</a>
-			<a href="#" class="button negative"><%= silk_image 'cancel.png' %> Cancel</a>
-			<a href="#" class="button"><%= silk_image 'door_in.png' %>	add element</a>
-		</div>
-		<h4>button: buttons</h4>
-		<div class="clearfix">
-			<% form_tag({:action => "index", :method => :get}, {:class => "form"}) do %>
-				<button type="submit">Draw</button>
-				<button type="submit" class="positive">Draw</button>
-				<button type="submit" class="negative">Draw</button>
-			<% end -%>
-		</div>
-	<% end %>	
+	<%= render :partial => "widgets/misc" %>
 <% end %>
 
 <% content_for(:right) do %>
 	<%= render :partial => "widgets/debugger" %>
-
-	<% widget_for 'credits' do %>
-		<ul>
-			<li><%= link_to 'codeofficer.com', 'http://www.codeofficer.com/' %></li>
-			<li><%= link_to 'famfam icons', 'http://drawingapp.local/images/silk/readme.html' %></li>
-		</ul>
-	<% end %>	
+	<%= render :partial => "widgets/credits" %>
 <% end %>
 
 <% content_for(:center) do %>

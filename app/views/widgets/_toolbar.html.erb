@@ -1,8 +1,20 @@
-<% widget_for 'toolbar' do %>
-	<dl>
-		<dt class='toolbar-button'><%= silk_image 'pencil.png' %></dt>
-		<dd class='toolbar-description'>Draw</dd>
-		<dt class='toolbar-button'><%= silk_image 'bomb.png' %></dt>
-		<dd class='toolbar-description'>Erase</dd>
-	</dl>
+<% widget_for 'tools' do %>
+	<table id="toolbar">
+		<tr>
+			<td class='tbutton'>
+				<%= link_to_function silk_image('pencil.png'), "log.debug('Draw')" %>
+			</td>
+			<td class='tdescription'>
+				<%= link_to_function "Click to Draw", "log.debug('Draw')" %>
+				</td>
+		</tr>
+		<tr>
+			<td class='tbutton'>
+				<%= link_to_function silk_image('bomb.png'), "log.debug('Erase')" %>
+			</td>
+			<td class='tdescription'>
+				<%= link_to_function "Click to Erase", "log.debug('Erase')" %>
+			</td>
+		</tr>
+	</table>
 <% end %>

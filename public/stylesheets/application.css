@@ -4,7 +4,7 @@ a[href^="http://"] {
 	background: transparent url(/images/application/external.png) no-repeat scroll right center;
 	padding-right:13px;
 }
-
+table { display: block; }
 ul { margin-bottom: 0px; } 
 dl { margin-bottom: 0px; } 
 canvas { border: 1px solid #999; width: 100%; }
@@ -14,9 +14,15 @@ canvas { border: 1px solid #999; width: 100%; }
 .toggler { border: 1px solid #999; padding:	2px; padding-left: 22px; background: #DDD; }
 .toggler { background: url(/images/silk/icons/door_open.png) no-repeat scroll 2px 3px; }
 .toggler.closed { background: url(/images/silk/icons/door.png) no-repeat scroll 2px 3px; }
+.toggler a { text-decoration: none; font-weight: bold; color: #000; }
+.toggler a:hover { text-decoration: underline; }
 
 .togglee { border: 1px solid #999; border-top: 0px; padding: 5px; }
 .togglee.closed { display: none; }
 .togglee > ul { list-style: none; }
 .togglee > ul > li { margin-left: 0px; }
 
+#toolbar { margin: 0px;}
+#toolbar .tbutton { width: 22px; } 
+#toolbar .tdescription a { text-decoration: none; } 
+#tbtoolbarar .tdescription a:hover { text-decoration: underline; } 
