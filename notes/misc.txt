@@ -1,3 +1,46 @@
+// 
+// // animation
+// 	var sun = document.images[0];
+// 	var moon = document.images[1];
+// 	var earth = document.images[2];
+// 	setInterval(draw,150);
+// 
+// 	function draw() {
+// 		context.globalCompositeOperation = 'destination-over';
+// 		context.clearRect(0,0,300,300); // clear canvas
+// 
+// 		context.fillStyle = 'rgba(0,0,0,0.4)';
+// 		context.strokeStyle = 'rgba(0,153,255,0.4)';
+// 		context.save();
+// 		context.translate(150,150);
+// 
+// 		// Earth
+// 		var time = new Date();
+// 		context.rotate( ((2*Math.PI)/60)*time.getSeconds() + ((2*Math.PI)/60000)*time.getMilliseconds() );
+// 		context.translate(105,0);
+// 		context.fillRect(0,-12,50,24); // Shadow
+// 		context.drawImage(earth,-12,-12);
+// 
+// 		// Moon
+// 		context.save();
+// 		context.rotate( ((2*Math.PI)/6)*time.getSeconds() + ((2*Math.PI)/6000)*time.getMilliseconds() );
+// 		context.translate(0,28.5);
+// 		context.drawImage(moon,-3.5,-3.5);
+// 		context.restore();
+// 
+// 		context.restore();
+// 
+// 		context.beginPath();
+// 		context.arc(150,150,105,0,Math.PI*2,false); // Earth orbit
+// 		context.stroke();
+// 
+// 		context.drawImage(sun,0,0,300,300);
+// 		log.info('animate: ' + time.getMilliseconds());
+// 	}
+// 	
+
+
+
 # from https://developer.mozilla.org/En/Canvas_tutorial
 
 $(function() {
