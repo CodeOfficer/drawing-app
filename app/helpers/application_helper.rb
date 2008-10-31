@@ -28,6 +28,7 @@ module ApplicationHelper
   end
   
   def widget_for( title, options = {}, &block )
+    options[:closed] ||= ''
     block_to_partial 'templates/widget', options.merge( :title => title ), &block
   end
   
