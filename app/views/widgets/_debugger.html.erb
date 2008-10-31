@@ -1,0 +1,8 @@
+<% widget_for 'debugger' do %>
+	<ul>
+		<li><%= link_to_function "clear", "log.clear()" %></li>
+		<li><%= link_to_function "move", "log.move()" %></li>
+		<li><%= link_to_function "resize", "log.resize()" %></li>
+		<li><%= link_to_function "toggle", "log.toggle()" %></li>
+	</ul>
+<% end %>

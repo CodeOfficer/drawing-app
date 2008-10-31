@@ -1,13 +1,5 @@
 <% content_for(:left) do %>
-
-	<% widget_for 'toolbar' do %>
-		<dl>
-			<dt class='toolbar-button'><%= silk_image 'pencil.png' %></dt>
-			<dd class='toolbar-description'>Draw</dd>
-			<dt class='toolbar-button'><%= silk_image 'bomb.png' %></dt>
-			<dd class='toolbar-description'>Erase</dd>
-		</dl>
-	<% end %>
+	<%= render :partial => "widgets/toolbar" %>
 
 	<% widget_for 'misc' do %>
 		<h4>a: buttons</h4>
@@ -25,29 +17,13 @@
 				<button type="submit" class="negative">Draw</button>
 			<% end -%>
 		</div>
-	<% end %>
-	
+	<% end %>	
 <% end %>
 
 <% content_for(:right) do %>
-
-	<% widget_for 'debugger' do %>
-		<ul>
-			<li><%= link_to_function "clear", "log.clear()" %></li>
-			<li><%= link_to_function "move", "log.move()" %></li>
-			<li><%= link_to_function "resize", "log.resize()" %></li>
-			<li><%= link_to_function "toggle", "log.toggle()" %></li>
-		</ul>
-	<% end %>
-	
+	<%= render :partial => "widgets/debugger" %>
 <% end %>
 
 <% content_for(:center) do %>
-
-	<% widget_for 'workspace' do %>
-		<% content_tag :canvas, :id => "canvas" do  %>
-			xxx
-		<% end %>
-	<% end %>
-	
+	<%= render :partial => "widgets/workspace" %>
 <% end %>
