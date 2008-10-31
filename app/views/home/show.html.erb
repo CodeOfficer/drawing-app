@@ -4,10 +4,10 @@
 	<% widget_for 'misc' do %>
 		<h4>a: buttons</h4>
 		<div class="clearfix">
-			<a href="http://some-site.com/" class="button"><%= silk_image 'eye.png' %> See</a>
-			<a href="http://some-site.com/" class="button positive"><%= silk_image 'add.png' %> Add</a>
-			<a href="http://some-site.com/" class="button negative"><%= silk_image 'cancel.png' %> Cancel</a>
-			<a href="http://some-site.com/" class="button"><%= silk_image 'door_in.png' %>	add element</a>
+			<a href="#" class="button"><%= silk_image 'eye.png' %> See</a>
+			<a href="#" class="button positive"><%= silk_image 'add.png' %> Add</a>
+			<a href="#" class="button negative"><%= silk_image 'cancel.png' %> Cancel</a>
+			<a href="#" class="button"><%= silk_image 'door_in.png' %>	add element</a>
 		</div>
 		<h4>button: buttons</h4>
 		<div class="clearfix">
@@ -22,6 +22,13 @@
 
 <% content_for(:right) do %>
 	<%= render :partial => "widgets/debugger" %>
+
+	<% widget_for 'credits' do %>
+		<ul>
+			<li><%= link_to 'codeofficer.com', 'http://www.codeofficer.com/' %></li>
+			<li><%= link_to 'famfam icons', 'http://drawingapp.local/images/silk/readme.html' %></li>
+		</ul>
+	<% end %>	
 <% end %>
 
 <% content_for(:center) do %>

@@ -19,7 +19,29 @@
 //   profile: function() {}
 // };
 
- var Canvas = new JS.Class({
+$(function() {
+
+	log.profile( 'timing' ); // begin profiler
+	
+		// external links open in a new window
+		$('a[href^="http://"]').attr({ target: "_blank", title: "Opens in a new window"});
+		
+		// inject the toggling behavior for togglers
+		$('.toggler').click(function() {
+			log.debug( 'click toggler!' );
+			$(this).toggleClass('closed').next('.togglee').toggleClass('closed');
+		});
+
+		// trapping .button clicks so they dont go anywhere
+		$('.button').click(function() { log.debug( 'click trapped!' ); return false; });
+	
+		$.ajaxSetup({ 'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript"); } });
+
+	log.profile( 'timing' ); // end profiler
+
+});
+
+	var Canvas = new JS.Class({
 	  initialize: function(dom_id) {
 	    this.dom_id = dom_id;
 	  },
@@ -29,27 +51,14 @@
 	  }
 	});
 
-
 $(function() {
 	
-	log.profile( 'timing' );
-		
-	// behviors for togglers
-	$('.toggler').click(function() {
-		log.debug( 'click toggler!' );
-		$(this).toggleClass('closed');
-		$(this).next('.togglee').toggleClass('closed');
-	});
+	log.profile( 'canvas' ); // begin profiler
 
-	// trapping .button clicks	
-	$('.button').click(function() {
-		log.debug( 'click trapped!' );
-		return false;
-	});
-
+	// initializing my canvas
 	var canvas = new Canvas('canvas');
 	// alert(canvas.speak())
 	
-	log.profile( 'timing' );
+	log.profile( 'canvas' ); // end profiler
 
 });
