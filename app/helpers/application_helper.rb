@@ -3,7 +3,7 @@ module ApplicationHelper
   def asset_dependencies
     {
       :defaults =>          [ :styles, :themeroller, :jquery, :blackbird, 
-                              :js_class, :js_command,
+                              :js_class, :js_command, :js_observable,
                               'drawingapp.js', 'application.js' ],
       :styles =>            [ '960/reset.css', '960/text.css', '960/960.css', 'blueprint/plugins/buttons/screen.css', 'application.css' ],
       :js_class =>          [ 'src/class.js' ],
@@ -27,6 +27,22 @@ module ApplicationHelper
   
   def silk_image( img, options={} )
     image_tag "/images/silk/icons/#{img}", options
+  end
+  
+  def button_for( text, options = {} )
+    options[:text]      = text
+    options[:class]     ||= ''
+    options[:type]      ||= "submit"
+    options[:icon]      ||= 'tick.png'
+    options[:icon_path] ||= '/images/silk/icons/'
+    unless options[:icon].blank?
+      options[:icon] = image_tag "#{options[:icon_path]}#{options[:icon]}"
+      options[:text] = "#{options[:icon]} #{options[:text]}"
+    end
+    link_to_options = {}
+    link_to_options.merge!({ :class => "button clearfix #{options[:class]}" })
+    link_to_options.merge!({ :type => options[:type] })
+    content_tag(:button, options[:text], link_to_options)
   end
   
   def widget_for( title, options = {}, &block )

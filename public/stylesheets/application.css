@@ -23,6 +23,7 @@ canvas { border: 1px solid #999; width: 100%; }
 .togglee > ul > li { margin-left: 0px; }
 
 #toolbar { margin: 0px;}
+#toolbar td { vertical-align: middle; } 
 #toolbar .tbutton { width: 22px; } 
 #toolbar .tdescription a { text-decoration: none; } 
 #toolbar .tdescription a:hover { text-decoration: underline; }

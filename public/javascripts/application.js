@@ -32,21 +32,9 @@ $(function() {
 	});
 
 	// trapping .button clicks so they dont go anywhere
-	$('.button').click(function() { log.debug( 'click trapped!' ); return false; });
+	$('.button').click(function() { log.debug( 'button click trapped!' ); return false; });
 
 	$.ajaxSetup({ 'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript"); } });
 
 	log.profile( 'timing' ); // end profiler
 });
-
-
-$(function() {
-	log.profile( 'canvas' ); // begin profiler
-	
-		var my_canvas = new Canvas('canvas');
-				my_canvas.drawGradients();	
-				my_canvas.drawRandomImages();
-	
-	log.profile( 'canvas' ); // end profiler
-});
-

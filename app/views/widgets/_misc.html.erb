@@ -9,10 +9,10 @@
 	<h4>button: buttons</h4>
 	<div class="clearfix">
 		<% form_tag({:action => "index", :method => :get}, {:class => "form"}) do %>
-			<button type="submit">Draw</button>
-			<button type="submit" class="positive">Draw</button>
-			<button type="submit" class="negative">Draw</button>
+			<%= button_for "Draw", :icon => 'pencil.png' %>
+			<%= button_for "Draw", :icon => 'pencil.png', :class => 'positive' %>
+			<%= button_for "Draw", :icon => 'pencil.png', :class => 'negative' %>
 		<% end -%>
 	</div>
-	<div><%= image_tag '/images/rails.png', :id => "rails-image" %></div>
+	<%= image_tag '/images/rails.png', :id => "rails-image" %>
 <% end %>	
