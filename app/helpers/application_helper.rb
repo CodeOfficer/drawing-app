@@ -2,7 +2,9 @@ module ApplicationHelper
   
   def asset_dependencies
     {
-      :defaults =>          [ :styles, :themeroller, :jquery, :blackbird, :js_class, 'drawingapp.js', 'application.js' ],
+      :defaults =>          [ :styles, :themeroller, :jquery, :blackbird, 
+                              :js_class, :js_command,
+                              'drawingapp.js', 'application.js' ],
       :styles =>            [ '960/reset.css', '960/text.css', '960/960.css', 'blueprint/plugins/buttons/screen.css', 'application.css' ],
       :js_class =>          [ 'src/class.js' ],
       :js_command =>        [ :js_class, 'src/command.js' ],

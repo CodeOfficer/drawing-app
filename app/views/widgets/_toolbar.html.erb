@@ -1,20 +1,38 @@
 <% widget_for 'tools' do %>
 	<table id="toolbar">
+		
 		<tr>
 			<td class='tbutton'>
 				<%= link_to_function silk_image('pencil.png'), "log.debug('Draw')" %>
 			</td>
 			<td class='tdescription'>
 				<%= link_to_function "Click to Draw", "log.debug('Draw')" %>
-				</td>
+			</td>
+			<td class='tclicks'>
+			</td>
 		</tr>
+		
 		<tr>
 			<td class='tbutton'>
-				<%= link_to_function silk_image('bomb.png'), "log.debug('Erase')" %>
+				<%= link_to_function silk_image('pill.png'), "log.debug('Erase')" %>
 			</td>
 			<td class='tdescription'>
 				<%= link_to_function "Click to Erase", "log.debug('Erase')" %>
 			</td>
+			<td class='tclicks'>
+			</td>
 		</tr>
+		
+		<tr>
+			<td class='tbutton'>
+				<%= link_to_function silk_image('disk.png'), "log.debug('Save')" %>
+			</td>
+			<td class='tdescription'>
+				<%= link_to_function "Click to Save", "log.debug('Save')" %>
+			</td>
+			<td class='tclicks'>
+			</td>
+		</tr>
+		
 	</table>
 <% end %>

@@ -45,8 +45,7 @@ $(function() {
 	
 		var my_canvas = new Canvas('canvas');
 				my_canvas.drawGradients();	
-				my_canvas.drawRandomImages();	
-				my_canvas.speak();	
+				my_canvas.drawRandomImages();
 	
 	log.profile( 'canvas' ); // end profiler
 });

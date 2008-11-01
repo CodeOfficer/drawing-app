@@ -11,7 +11,7 @@ canvas { border: 1px solid #999; width: 100%; }
 
 .widget { background: #FC6; margin-top: 5px; } 
 
-.toggler { border: 1px solid #999; padding:	2px; padding-left: 22px; background: #DDD; }
+.toggler { border: 1px solid #999; padding:	2px; padding-left: 25px; background: #DDD; }
 .toggler { background: url(/images/silk/icons/door_open.png) no-repeat scroll 2px 3px; }
 .toggler.closed { background: url(/images/silk/icons/door.png) no-repeat scroll 2px 3px; }
 .toggler a { text-decoration: none; font-weight: bold; color: #000; }
@@ -25,4 +25,5 @@ canvas { border: 1px solid #999; width: 100%; }
 #toolbar { margin: 0px;}
 #toolbar .tbutton { width: 22px; } 
 #toolbar .tdescription a { text-decoration: none; } 
-#tbtoolbarar .tdescription a:hover { text-decoration: underline; } 
+#toolbar .tdescription a:hover { text-decoration: underline; }
+#toolbar .tclicks { padding-left: 10px; font-weight: bold; } 
