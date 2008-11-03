@@ -1,9 +1,7 @@
 var Toolbar = new JS.Class({
 	
 	  initialize: function(id) {
-	    this.id = id;		
-			this.tools = [1,2,3];
-			this.color = '#000';
+	    this.id = id;
 	  }
 
 	}); // Toolbar
@@ -11,9 +9,7 @@ var Toolbar = new JS.Class({
 var Tool = new JS.Class({
 	
 	  initialize: function(id) {
-	    this.id = id;		
-			this.tools = [1,2,3];
-			this.color = '#000';
+	    this.id = id;
 	  }
 
 	}); // Tool
@@ -32,12 +28,12 @@ var Canvas = new JS.Class({
 	
 		include: JS.Observable,
 	
-	  initialize: function(id) {
-	    this.id = id;
-			this.dom = $('#'+this.id)[0];
-			this.width = this.dom.width;
-			this.height = this.dom.height;
-			this.context = this.dom.getContext('2d');
+	  initialize: function(obj) {
+	    this.id = obj.id;
+			this.dom = obj;
+			this.width = obj.width;
+			this.height = obj.height;
+			this.context = obj.getContext('2d');
 			this.commandStack = new JS.Command.Stack();
 	  },
 
@@ -65,18 +61,14 @@ var Canvas = new JS.Class({
 	
 		drawRandomImages: function() {
 
-			function draw(){			
-				for (i=0;i<document.images.length;i++){
-					// random coordinates
-						var r_width = Math.floor(Math.random()*this.width);
-						var r_height = Math.floor(Math.random()*this.height);
-					// Draw image to canvas
-						log.debug('drawing to dom: ' + this.context);
-						this.context.drawImage(document.images[i],r_width,r_height);
-				}
-			};
-			
-			setInterval(draw, 1000);
+			for (i=0;i<document.images.length;i++){
+				// random coordinates
+					var r_width = Math.floor(Math.random()*this.width);
+					var r_height = Math.floor(Math.random()*this.height);
+				// Draw image to canvas
+					log.debug('drawing to dom: ' + this.context);
+					this.context.drawImage(document.images[i],r_width,r_height);
+			}		
 			
 		}
 	}); // Canvas
@@ -85,15 +77,12 @@ var Canvas = new JS.Class({
 
 
 $(function() {
-	log.profile( 'canvas' ); // begin profiler
-	
-		var canvas = new Canvas('canvas');
-		var toolbar = new Toolbar('toolbar');
-		var tool = new Tool('tool');
-
-			// canvas.drawGradients();	
-			canvas.drawRandomImages();
-	
-	log.profile( 'canvas' ); // end profiler
+	log.profile( 'drawingapp.js' ); // begin profiler
+		
+		var canvas = new Canvas( $('#canvas')[0] );
+				canvas.drawGradients();
+				canvas.drawRandomImages();
+				
+	log.profile( 'drawingapp.js' ); // end profiler
 });
 

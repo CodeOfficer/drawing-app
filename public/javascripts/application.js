@@ -20,7 +20,7 @@
 // };
 
 $(function() {
-	log.profile( 'timing' ); // begin profiler
+	log.profile( 'application.js' ); // begin profiler
 	
 	// external links open in a new window
 	$('a[href^="http"]').attr({ target: "_blank", title: "Opens in a new window"});
@@ -32,9 +32,12 @@ $(function() {
 	});
 
 	// trapping .button clicks so they dont go anywhere
-	$('.button').click(function() { log.debug( 'button click trapped!' ); return false; });
+	$('.button').click(function() { 
+		log.debug( 'button click trapped!' ); 
+		return false; 
+	});
 
 	$.ajaxSetup({ 'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript"); } });
 
-	log.profile( 'timing' ); // end profiler
+	log.profile( 'application.js' ); // end profiler
 });
