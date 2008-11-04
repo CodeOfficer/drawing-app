@@ -38,19 +38,13 @@ $(function() {
 		});
 
 		$.ajaxSetup({ 'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript"); } });
-
-	log.profile( 'application.js' ); // end profiler
-});
-
-
-$(function() {
-	var canvas = null;		
-			canvas = new Canvas( $('#canvas')[0] );
-			canvas.drawGradients();
-		
-	function start() {	
-		canvas.drawRandomImages();
-	};
 	
-	setInterval(start, 1000);
+		var canvas = null;		
+				canvas = new Canvas( $('#canvas')[0] );
+				// canvas.drawGradients();
+		// function start() { canvas.drawRandomImages(); };
+		// 		setInterval(start, 1000);
+				canvas.drawImageToCanvasOnMouseOver();
+	
+	log.profile( 'application.js' ); // end profiler
 });

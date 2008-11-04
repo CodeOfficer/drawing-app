@@ -68,5 +68,30 @@ var Canvas = new JS.Class({
 					// log.debug('drawing to dom: ' + this.context);
 					this.context.drawImage(document.images[i],r_width,r_height);
 			}		
+		},
+	
+		drawImageToCanvasOnMouseOver: function() {
+			var images = document.images;
+			var context = this.context;
+			var width = this.width;
+			var height = this.height;
+			var counter = 0;
+			for (i=0;i<images.length;i++){
+				images[i].addEventListener("mouseover", function(e)
+		    {
+		        var image = e.currentTarget;
+						var r_width = Math.floor(Math.random()*width);
+						var r_height = Math.floor(Math.random()*height);
+						context.drawImage(image,r_width,r_height);
+						log.debug( 'drew img on canvas! ' + counter); 
+						counter ++;
+		        // window.setTimeout(function()
+		        // {
+		        //     element.style.backgroundColor = backgroundColor; 
+		        // }, 1500)
+		    }, false);
+			}		
 		}
+		
+		
 	}); // Canvas

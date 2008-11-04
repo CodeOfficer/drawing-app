@@ -1,4 +1,5 @@
 <% widget_for 'misc', :closed => 'closed' do %>
+	<%= image_tag '/images/rails.png', :id => "rails-image" %>
 	<h4>a: buttons</h4>
 	<div class="clearfix">
 		<%= link_to_function "#{silk_image('eye.png')} See", '', :class => 'button' %>
@@ -14,5 +15,4 @@
 			<%= button_for "Draw", :icon => 'pencil.png', :class => 'negative' %>
 		<% end -%>
 	</div>
-	<%= image_tag '/images/rails.png', :id => "rails-image" %>
 <% end %>	
