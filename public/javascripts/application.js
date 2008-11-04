@@ -22,22 +22,35 @@
 $(function() {
 	log.profile( 'application.js' ); // begin profiler
 	
-	// external links open in a new window
-	$('a[href^="http"]').attr({ target: "_blank", title: "Opens in a new window"});
+		// external links open in a new window
+		$('a[href^="http"]').attr({ target: "_blank", title: "Opens in a new window"});
 	
-	// inject the toggling behavior for togglers
-	$('.toggler').click(function() {
-		log.debug( 'click toggler!' );
-		$(this).toggleClass('closed').next('.togglee').toggleClass('closed');
-	});
+		// inject the toggling behavior for togglers
+		$('.toggler').click(function() {
+			log.debug( 'click toggler!' );
+			$(this).toggleClass('closed').next('.togglee').toggleClass('closed');
+		});
 
-	// trapping .button clicks so they dont go anywhere
-	$('.button').click(function() { 
-		log.debug( 'button click trapped!' ); 
-		return false; 
-	});
+		// trapping .button clicks so they dont go anywhere
+		$('.button').click(function() { 
+			log.debug( 'button click trapped!' ); 
+			return false; 
+		});
 
-	$.ajaxSetup({ 'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript"); } });
+		$.ajaxSetup({ 'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript"); } });
 
 	log.profile( 'application.js' ); // end profiler
+});
+
+
+$(function() {
+	var canvas = null;		
+			canvas = new Canvas( $('#canvas')[0] );
+			canvas.drawGradients();
+		
+	function start() {	
+		canvas.drawRandomImages();
+	};
+	
+	setInterval(start, 1000);
 });

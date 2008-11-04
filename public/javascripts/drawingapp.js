@@ -60,29 +60,13 @@ var Canvas = new JS.Class({
 		},
 	
 		drawRandomImages: function() {
-
 			for (i=0;i<document.images.length;i++){
 				// random coordinates
 					var r_width = Math.floor(Math.random()*this.width);
 					var r_height = Math.floor(Math.random()*this.height);
 				// Draw image to canvas
-					log.debug('drawing to dom: ' + this.context);
+					// log.debug('drawing to dom: ' + this.context);
 					this.context.drawImage(document.images[i],r_width,r_height);
 			}		
-			
 		}
 	}); // Canvas
-
-
-
-
-$(function() {
-	log.profile( 'drawingapp.js' ); // begin profiler
-		
-		var canvas = new Canvas( $('#canvas')[0] );
-				canvas.drawGradients();
-				canvas.drawRandomImages();
-				
-	log.profile( 'drawingapp.js' ); // end profiler
-});
-
