@@ -1,28 +1,28 @@
-var Toolbar = new JS.Class({
-	
-	  initialize: function(id) {
-	    this.id = id;
-	  }
-
-	}); // Toolbar
-
-var Tool = new JS.Class({
-	
-	  initialize: function(id) {
-	    this.id = id;
-	  }
-
-	}); // Tool
-
-var Pen = new JS.Class({
-	
-	  initialize: function(id) {
-	    this.id = id;		
-			this.lineWidth = 1;
-			this.color = '#000';
-	  }
-
-	}); // Pen
+// var Toolbar = new JS.Class({
+// 	
+// 	  initialize: function(id) {
+// 	    this.id = id;
+// 	  }
+// 
+// 	}); // Toolbar
+// 
+// var Tool = new JS.Class({
+// 	
+// 	  initialize: function(id) {
+// 	    this.id = id;
+// 	  }
+// 
+// 	}); // Tool
+// 
+// var Pen = new JS.Class({
+// 	
+// 	  initialize: function(id) {
+// 	    this.id = id;		
+// 			this.lineWidth = 1;
+// 			this.color = '#000';
+// 	  }
+// 
+// 	}); // Pen
 
 var Canvas = new JS.Class({
 	

@@ -32,7 +32,7 @@ a[href^="http"] {
 .drawing-toolbar img:hover { }
 .drawing-content { padding: 2px; } 
 .drawing-canvas { width: 444px; height: 200px; }
-.drawing-footer { padding: 0px 2px; }
+.drawing-footer { padding: 2px; }
 .drawing-status { padding: 2px; background-color: #DDD; white-space: pre; }
 
 
