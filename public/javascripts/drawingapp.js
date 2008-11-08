@@ -39,6 +39,8 @@ var Canvas = new JS.Class({
 
 		drawGradients: function() {
 			this.notifyObservers(this.id);
+			
+			log.debug(this.width);
 
 			lingrad = this.context.createLinearGradient(0,0,0,this.height);
 		  lingrad.addColorStop(0, '#00ABEB');
@@ -56,7 +58,7 @@ var Canvas = new JS.Class({
   
 		  // draw shapes
 		  this.context.fillRect(0,0,this.width,this.height);
-		  this.context.strokeRect(10,10,this.width-20,this.height-20);
+		  this.context.strokeRect(5,5,this.width-10,this.height-10);
 		},
 	
 		drawRandomImages: function() {
@@ -65,7 +67,7 @@ var Canvas = new JS.Class({
 					var r_width = Math.floor(Math.random()*this.width);
 					var r_height = Math.floor(Math.random()*this.height);
 				// Draw image to canvas
-					// log.debug('drawing to dom: ' + this.context);
+					log.debug('drawing to dom: ' + r_width + ' ' + r_height);
 					this.context.drawImage(document.images[i],r_width,r_height);
 			}		
 		},

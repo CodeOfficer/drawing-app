@@ -39,12 +39,11 @@ $(function() {
 
 		$.ajaxSetup({ 'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript"); } });
 	
-		var canvas = null;		
-				canvas = new Canvas( $('#canvas')[0] );
-				// canvas.drawGradients();
-		// function start() { canvas.drawRandomImages(); };
-		// 		setInterval(start, 1000);
-				canvas.drawImageToCanvasOnMouseOver();
+		canvas = null;		
+		canvas = new Canvas( $('.drawing-canvas')[0] );
+			// setInterval('canvas.drawRandomImages()', 1000);
+			canvas.drawGradients();
+			canvas.drawImageToCanvasOnMouseOver();
 	
 	log.profile( 'application.js' ); // end profiler
 });

@@ -1,13 +1,12 @@
 body { margin: 5px 5px; }
 
+table { display: block; }
+ul { margin-bottom: 0px; } 
+
 a[href^="http"] {
 	background: transparent url(/images/application/external.png) no-repeat scroll right center;
 	padding-right:13px;
 }
-table { display: block; }
-ul { margin-bottom: 0px; } 
-dl { margin-bottom: 0px; } 
-canvas { border: 1px solid #999; width: 100%; }
 
 .widget { background: #FC6; margin-top: 5px; } 
 
@@ -22,9 +21,19 @@ canvas { border: 1px solid #999; width: 100%; }
 .togglee > ul { list-style: none; }
 .togglee > ul > li { margin-left: 0px; }
 
-#toolbar { margin: 0px;}
-#toolbar td { vertical-align: middle; } 
-#toolbar .tbutton { width: 22px; } 
-#toolbar .tdescription a { text-decoration: none; } 
-#toolbar .tdescription a:hover { text-decoration: underline; }
-#toolbar .tclicks { padding-left: 10px; font-weight: bold; } 
+.drawing-container { background-color: #FFF; border-top: 1px solid #999; border-bottom: 1px solid #999; }
+.drawing-header, .drawing-content, .drawing-footer { background-color: #FFF; }
+.drawing-header, .drawing-content { border-bottom: 1px solid #999; } 
+.drawing-header { padding: 2px; background-color: #FFF; }
+.drawing-toolbar { background-color: #DDD; padding: 2px; }
+.drawing-toolbar li { display: inline; list-style-type: none; margin: 0px; margin-right: 2px; }
+.drawing-toolbar a { text-decoration: none; height: 29px;}
+.drawing-toolbar img { vertical-align: middle; }
+.drawing-toolbar img:hover { }
+.drawing-content { padding: 2px; } 
+.drawing-canvas { width: 444px; height: 200px; }
+.drawing-footer { padding: 0px 2px; }
+.drawing-status { padding: 2px; background-color: #DDD; white-space: pre; }
+
+
+
