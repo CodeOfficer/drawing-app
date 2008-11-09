@@ -2,27 +2,37 @@
 
 <% widget_for 'workspace', :closed => state do %>
 	<% content_tag :div, :class => 'drawing-container' do %>
+	
 		<% content_tag :div, :class => 'drawing-header' do %>
 			<% content_tag :ul, :class => 'drawing-toolbar' do %>
-				<li class="drawing-button"><%= link_to_function silk_image('pencil.png'), "log.debug('Draw')" %></li>
-				<li class="drawing-button"><%= link_to_function silk_image('pill.png'), "log.debug('Erase')" %></li>
-				<li class="drawing-button"><%= link_to_function silk_image('disk.png'), "log.debug('Save')" %></li>
+				<% content_tag :li, :class => 'drawing-button' do %>
+					<%= link_to_function silk_image('pencil.png'), "log.debug('Draw')" %>
+				<% end %>
+				<% content_tag :li, :class => 'drawing-button' do %>
+					<%= link_to_function silk_image('pill.png'), "log.debug('Erase')" %>
+				<% end %>
+				<% content_tag :li, :class => 'drawing-button' do %>
+					<%= link_to_function silk_image('disk.png'), "log.debug('Save')" %>
+				<% end %>
 			<% end %>
 		<% end %>
+		
 		<% content_tag :div, :class => 'drawing-content' do %>
-			<% content_tag :canvas, :class => "drawing-canvas", :width => 444, :height => 200 do  %>
+			<% content_tag :canvas, :class => "drawing-canvas", :width => 442, :height => 200 do  %>
 				Sorry, your browser does not support the Canvas tag.
 			<% end %>
 		<% end %>
+		
 		<% content_tag :div, :class => 'drawing-footer' do %>
 			<% content_tag :div, :class => 'drawing-status' do %> <% end %>
 		<% end %>
+		
 	<% end %>
 <% end %>
 
 <script type="text/javascript" charset="utf-8">
 	$(function() {
-		$('.drawing-button a').click(function() {
+		$('.drawing-button > a').click(function() {
 			log.info('ping');
 			return false;
 		});

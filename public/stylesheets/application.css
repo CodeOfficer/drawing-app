@@ -21,18 +21,19 @@ a[href^="http"] {
 .togglee > ul { list-style: none; }
 .togglee > ul > li { margin-left: 0px; }
 
-.drawing-container { background-color: #FFF; border-top: 1px solid #999; border-bottom: 1px solid #999; }
+/*.drawing-container { background-color: #FFF; border-top: 1px solid #999; border-bottom: 1px solid #999; }*/
+.drawing-container { background-color: #FFF; border: 1px solid #999; }
 .drawing-header, .drawing-content, .drawing-footer { background-color: #FFF; }
 .drawing-header, .drawing-content { border-bottom: 1px solid #999; } 
-.drawing-header { padding: 2px; background-color: #FFF; }
+.drawing-header { padding: 1px; background-color: #FFF; }
 .drawing-toolbar { background-color: #DDD; padding: 2px; }
 .drawing-toolbar li { display: inline; list-style-type: none; margin: 0px; margin-right: 2px; }
 .drawing-toolbar a { text-decoration: none; height: 29px;}
 .drawing-toolbar img { vertical-align: middle; }
 .drawing-toolbar img:hover { }
-.drawing-content { padding: 2px; } 
+.drawing-content { padding: 1px; } 
 .drawing-canvas { width: 444px; height: 200px; }
-.drawing-footer { padding: 2px; }
+.drawing-footer { padding: 1px; }
 .drawing-status { padding: 2px; background-color: #DDD; white-space: pre; }
 
 

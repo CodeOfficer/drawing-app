@@ -1,4 +1,4 @@
-<% widget_for 'debugger' do %>
+<% widget_for 'debugger', :closed => 'closed' do %>
 	<ul>
 		<li><%= link_to_function "clear", "log.clear()" %></li>
 		<li><%= link_to_function "move", "log.move()" %></li>

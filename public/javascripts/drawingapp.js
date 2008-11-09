@@ -58,7 +58,7 @@ var Canvas = new JS.Class({
   
 		  // draw shapes
 		  this.context.fillRect(0,0,this.width,this.height);
-		  this.context.strokeRect(5,5,this.width-10,this.height-10);
+		  this.context.strokeRect(2,2,this.width-4,this.height-4);
 		},
 	
 		drawRandomImages: function() {
